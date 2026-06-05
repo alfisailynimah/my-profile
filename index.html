@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Alfi Saily Ni'mah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Menyembunyikan scrollbar untuk tampilan yang lebih bersih */
+      #experience-container::-webkit-scrollbar,
+      #modal-content::-webkit-scrollbar {
+        display: none;
+      }
+      #experience-container,
+      #modal-content {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+
+  <body class="bg-indigo-50 text-slate-800 font-sans">
+    <nav
+      class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 md:px-6 py-4 flex justify-between items-center gap-2"
+      >
+        <span
+          class="font-bold text-base md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400 whitespace-nowrap shrink-0"
+          >Alfi Saily Ni'mah</span
+        >
+        <div
+          class="flex space-x-2 md:space-x-6 text-[10px] md:text-sm font-medium"
+        >
+          <a href="#tentang" class="hover:text-indigo-400 transition-colors"
+            >Tentang</a
+          >
+          <a href="#proyek" class="hover:text-indigo-400">Proyek</a>
+          <a href="#pengalaman" class="hover:text-indigo-400">Pengalaman</a>
+          <a href="#keahlian" class="hover:text-indigo-400">Keahlian</a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="max-w-5xl mx-auto px-6 py-24 text-center">
+      <div
+        class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-widest text-indigo-600 uppercase bg-indigo-50 rounded-full"
+      >
+        Available for Work
+      </div>
+      <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+        Halo, Saya
+        <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-violet-500 animate-gradient-x"
+          >Alfi Saily</span
+        >
+      </h1>
+      <div class="text-xl md:text-2xl text-slate-600 mb-10 font-medium h-8">
+        Seorang
+        <span
+          id="typing-text"
+          class="text-indigo-600 font-bold border-r-2 border-indigo-600 pr-1"
+        ></span>
+      </div>
+
+      <p
+        class="text-xs text-slate-400 mb-4 font-bold uppercase tracking-widest"
+      >
+        Mari Terhubung
+      </p>
+      <div class="flex justify-center gap-4">
+        <a
+          href="https://wa.me/6281313335352"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center bg-white text-slate-600 rounded-full border border-slate-200 hover:text-green-500 hover:border-green-200 transition-all shadow-sm"
+        >
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/alfisailyy"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center bg-white text-slate-600 rounded-full border border-slate-200 hover:text-pink-600 hover:border-pink-200 transition-all shadow-sm"
+        >
+          <i class="fa-brands fa-instagram text-xl"></i>
+        </a>
+        <a
+          href="https://github.com/alfisailynimah"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center bg-white text-slate-600 rounded-full border border-slate-200 hover:text-slate-900 hover:border-slate-400 transition-all shadow-sm"
+          title="GitHub"
+        >
+          <i class="fa-brands fa-github text-xl"></i>
+        </a>
+      </div>
+    </header>
+
+    <section id="tentang" class="max-w-4xl mx-auto px-6 py-24 scroll-mt-20">
+      <h2 class="text-2xl font-bold mb-6 border-l-4 border-indigo-400 pl-4">
+        Tentang Saya
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-600">
+        Saya mahasiswa Prodi Sistem Informasi di Politeknik Negeri Subang. Fokus
+        utama saya adalah analisis kebutuhan, pemodelan sistem menggunakan UML
+        (Use Case & ERD), serta dokumentasi teknis seperti flowchart. Saya
+        senang mentransformasi proses manual menjadi solusi digital yang
+        efisien.
+      </p>
+    </section>
+
+    <section
+      id="proyek"
+      class="bg-white py-24 border-y border-slate-100 scroll-mt-20"
+    >
+      <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">Proyek Unggulan</h2>
+        <!-- Filter Proyek -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12">
+          <button
+            onclick="renderProjects('all')"
+            class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition-all border border-indigo-100 bg-white text-slate-600 hover:bg-indigo-50"
+          >
+            Semua
+          </button>
+          <button
+            onclick="renderProjects('System Analysis')"
+            class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all border border-indigo-100 bg-white text-slate-600 hover:bg-indigo-50"
+          >
+            Analysis
+          </button>
+          <button
+            onclick="renderProjects('UI/UX')"
+            class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all border border-indigo-100 bg-white text-slate-600 hover:bg-indigo-50"
+          >
+            UI/UX
+          </button>
+          <button
+            onclick="renderProjects('Automation')"
+            class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all border border-indigo-100 bg-white text-slate-600 hover:bg-indigo-50"
+          >
+            Automation
+          </button>
+        </div>
+
+        <div
+          id="projects-container"
+          class="grid md:grid-cols-3 gap-8 min-h-[400px]"
+        >
+          <!-- Proyek akan dimuat via JS -->
+        </div>
+      </div>
+    </section>
+
+    <section id="pengalaman" class="max-w-5xl mx-auto px-6 py-12 scroll-mt-20">
+      <h2 class="text-2xl font-bold mb-8 border-l-4 border-indigo-400 pl-4">
+        Pengalaman
+      </h2>
+      <div class="relative group">
+        <!-- Tombol Navigasi Kiri -->
+        <button
+          onclick="scrollExperience('left')"
+          class="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-indigo-500 hover:bg-indigo-500 hover:text-white transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-slate-100"
+          aria-label="Scroll Left"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div
+          id="experience-container"
+          class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scroll-smooth"
+        >
+          <!-- Konten akan dimuat via JavaScript -->
+        </div>
+
+        <!-- Tombol Navigasi Kanan -->
+        <button
+          onclick="scrollExperience('right')"
+          class="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white shadow-lg rounded-full flex items-center justify-center text-indigo-500 hover:bg-indigo-500 hover:text-white transition-all opacity-100 md:opacity-0 md:group-hover:opacity-100 border border-slate-100"
+          aria-label="Scroll Right"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section id="keahlian" class="max-w-5xl mx-auto px-6 py-24 scroll-mt-20">
+      <h2 class="text-3xl font-bold mb-12 text-center">
+        Keahlian & Kompetensi
+      </h2>
+      <div id="skills-container" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Konten akan dimuat via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Project Modal (Popup) -->
+    <div
+      id="project-modal"
+      class="fixed inset-0 z-[60] hidden bg-slate-900/90 flex items-center justify-center p-4 backdrop-blur-sm"
+    >
+      <div
+        class="bg-white w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden flex flex-col relative shadow-2xl"
+      >
+        <button
+          onclick="closeProjectModal()"
+          class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 z-10 bg-white/80 rounded-full p-2 transition-all"
+        >
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <div id="modal-content" class="overflow-y-auto p-6 md:p-10">
+          <!-- Konten detail akan diisi oleh JS -->
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-slate-950 text-white py-12 text-center">
+      <div class="flex justify-center gap-6 mb-8 text-2xl">
+        <a
+          href="https://wa.me/6281313335352"
+          target="_blank"
+          class="text-slate-400 hover:text-[#25D366] transition-colors"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/alfisailyy"
+          target="_blank"
+          class="text-slate-400 hover:text-[#ee2a7b] transition-colors"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a
+          href="https://github.com/alfisailynimah"
+          target="_blank"
+          class="text-slate-400 hover:text-white transition-colors"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+      <div class="mb-8 flex justify-center items-center gap-2">
+        <button
+          onclick="copyToClipboard('alfisailynimah@gmail.com', this)"
+          class="text-slate-400 hover:text-white transition-colors text-sm flex items-center gap-2"
+        >
+          alfisailynimah@gmail.com
+          <i class="fa-regular fa-copy text-[10px]"></i>
+        </button>
+      </div>
+      <p>&copy; 2026 Alfi Saily Ni'mah. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Data Keahlian Teknis
+      const skillsData = {
+        tools: [
+          { icon: "fa-file-word", label: "Microsoft Office" },
+          { icon: "fa-project-diagram", label: "Draw.io" },
+          { icon: "fa-palette", label: "Canva" },
+          { icon: "fa-diagram-project", label: "StarUML" },
+        ],
+        hardSkills: [
+          { icon: "fa-code", label: "PHP" },
+          { icon: "fa-route", label: "DFD" },
+          { icon: "fa-database", label: "ERD" },
+          { icon: "fa-user-gear", label: "Use Case Diagram" },
+        ],
+        softSkills: [
+          { icon: "fa-magnifying-glass", label: "Ketelitian" },
+          { icon: "fa-clock", label: "Manajemen Waktu" },
+          { icon: "fa-users-gear", label: "Kerja Sama Tim" },
+        ],
+      };
+
+      const projectDetails = {
+        naz: {
+          id: "naz",
+          year: "2026",
+          tag: "CORE SYSTEM",
+          category: "System Analysis",
+          title: "Naz Hidrofarm Information System",
+          desc: "Sistem informasi terintegrasi untuk manajemen operasional hidroponik, mencakup fitur penjualan produk, pendaftaran magang, hingga reservasi kunjungan edukasi.",
+          role: "System Analyst & Lead UI Designer",
+          tech: [
+            "System Analysis",
+            "Figma",
+            "UML Modeling",
+            "High-Fidelity Prototyping",
+          ],
+          images: [
+            {
+              url: "images/home.jpeg",
+              label: "Antarmuka Beranda",
+              caption: "Halaman utama operasional.",
+            },
+            {
+              url: "images/produk.jpeg",
+              label: "Daftar Produk",
+              caption: "Manajemen stok real-time.",
+            },
+            {
+              url: "images/kunjungan.jpeg",
+              label: "Daftar Paket Kunjungan",
+              caption: "Fitur reservasi untuk edukasi wisata hidroponik.",
+            },
+            {
+              url: "images/penjualan.png",
+              label: "Proses Bisnis Penjualan Online",
+              caption: "Proses bisnis yang ter digitalisasi.",
+            },
+            {
+              url: "images/reservasi.png",
+              label: "Proses Bisnis Reservasi Kunjungan",
+              caption: "Proses bisnis yang ter digitalisasi.",
+            },
+            {
+              url: "images/erd.jpeg",
+              label: "Entity Relationship Diagram (ERD)",
+              caption: "ERD Sistem Naz Hidrofarm.",
+            },
+          ],
+        },
+        cakedai: {
+          id: "cakedai",
+          year: "2025",
+          tag: "UI/UX",
+          category: "UI/UX",
+          title: "Digitalisasi Cake's Dai",
+          desc: "Transformasi katalog fisik ke platform digital yang responsif untuk meningkatkan jangkauan pasar dan memberikan kemudahan transaksi bagi pelanggan.",
+          role: "UI/UX Designer",
+          tech: ["Canva", "UI/UX Design", "Responsive Web Design", "Branding"],
+          images: [
+            {
+              url: "images/regist.jpeg",
+              label: "Registrasi/Login Pengguna",
+              caption: "Formulir pendaftaran pelanggan baru.",
+            },
+            {
+              url: "images/registrasi.jpeg",
+              label: "Registrasi Pengguna",
+              caption: "Formulir pendaftaran pelanggan baru.",
+            },
+            {
+              url: "images/login3.jpeg",
+              label: "Form Login Pengguna",
+              caption: "Formulir login pelanggan.",
+            },
+            {
+              url: "images/menu.jpeg",
+              label: "Kategori",
+              caption: "Pengelompokan jenis kue.",
+            },
+            {
+              url: "images/menu2.jpeg",
+              label: "Daftar Menu",
+              caption: "Tampilan visual katalog kue menarik.",
+            },
+            {
+              url: "images/erd2.jpeg",
+              label: "Entity Relationship Diagram (ERD)",
+              caption: "ERD Sistem Cake's Dai.",
+            },
+          ],
+        },
+        vba: {
+          id: "vba",
+          year: "2025",
+          tag: "AUTOMATION",
+          category: "Automation",
+          title: "Otomatisasi Surat VBA",
+          desc: "Penggunaan makro Excel berbasis Visual Basic for Applications (VBA) untuk efisiensi administrasi, mempercepat pembuatan dokumen surat secara massal dari basis data digital.",
+          role: "Excel Developer & Automation Specialist",
+          tech: [
+            "VBA Excel",
+            "Document Automation",
+            "Database Management",
+            "Macros",
+          ],
+          images: [
+            {
+              url: "images/signup.jpeg",
+              label: "Form Registrasi",
+              caption: "Input data awal sistem terintegrasi VBA.",
+            },
+            {
+              url: "images/login2.jpeg",
+              label: "Form Login",
+              caption: "Sistem autentikasi akses data.",
+            },
+            {
+              url: "images/surat.jpeg",
+              label: "Tabel Data",
+              caption: "Basis data otomatisasi surat masal.",
+            },
+            {
+              url: "images/tambah_data.jpeg",
+              label: "Form Tambah Data Baru",
+              caption: "Formulir tambah data penduduk baru.",
+            },
+            {
+              url: "images/pembuatan_surat.jpg",
+              label: "Proses Bisnis Pembuatan Surat",
+              caption: "Proses bisnis yang ter digitalisasi.",
+            },
+            {
+              url: "images/pengajuan_surat.jpg",
+              label: "Proses Bisnis Pengajuan Surat",
+              caption: "Proses bisnis yang berjalan.",
+            },
+          ],
+        },
+      };
+
+      const experienceData = [
+        {
+          year: "2025",
+          icon: "fa-users",
+          title: "Panitia Divisi Danusan – Digital Festival Nasional Himatikom",
+          description:
+            "Merancang anggaran dan strategi pendanaan kreatif untuk festival nasional, mengelola sistem administrasi penjualan serta distribusi produk secara terstruktur, dan berkolaborasi dengan tim keuangan guna memastikan pelaporan arus kas yang akurat dan transparan.",
+        },
+        {
+          year: "2025",
+          icon: "fa-users",
+          title:
+            "Panitia Divisi Publikasi, Dekorasi, dan Dokumentasi (PDD) – Project X Wirus",
+          description:
+            "Merancang konsep visual dan identitas digital untuk meningkatkan brand awareness, mengoordinasi dokumentasi serta pengarsipan aset secara terstruktur, dan bertanggung jawab atas estetika dekorasi venue yang selaras dengan tema acara.",
+        },
+        {
+          year: "2025",
+          icon: "fa-users",
+          title: "Koordinator (PJ) Lomba 17 Agustus",
+          description:
+            "Memimpin perencanaan dan eksekusi teknis perlombaan melalui koordinasi sumber daya, melakukan analisis kebutuhan serta manajemen risiko untuk kelancaran acara, dan bertindak sebagai komunikator utama antara panitia dan peserta terkait regulasi maupun hasil lomba.",
+        },
+        {
+          year: "2025",
+          icon: "fa-users",
+          title: "Panitia Divisi Konsumsi – Seminar Kemahasiswaan HUT RI 80",
+          description:
+            "Mengelola logistik konsumsi melalui kurasi dan negosiasi vendor untuk kualitas terbaik, serta mengatur alur distribusi makanan secara efisien guna memastikan ketepatan waktu dan kenyamanan peserta selama acara.",
+        },
+        {
+          year: "2025",
+          icon: "fa-chart-line",
+          title: "Bootcamp Affiliate Marketing",
+          description:
+            "Menganalisis metrik performa digital dan strategi konversi audiens, serta mengimplementasikan teknik pemasaran berbasis data untuk meningkatkan efisiensi promosi.",
+        },
+      ];
+
+      function renderProjects(filter = "all") {
+        const container = document.getElementById("projects-container");
+        if (!container) return;
+
+        // Update active filter button style
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+          const btnText = btn.textContent.trim().toLowerCase();
+          const filterText = filter.toLowerCase();
+
+          if (
+            (filterText === "all" && btnText === "semua") ||
+            filterText.includes(btnText) ||
+            btnText.includes(filterText)
+          ) {
+            btn.classList.add("bg-indigo-500", "text-white");
+            btn.classList.remove("bg-white", "text-slate-600");
+          } else {
+            btn.classList.remove("bg-indigo-500", "text-white");
+            btn.classList.add("bg-white", "text-slate-600");
+          }
+        });
+
+        const projectsArray = Object.values(projectDetails);
+        const filtered =
+          filter === "all"
+            ? projectsArray
+            : projectsArray.filter(
+                (p) => p.category === filter || p.tech.includes(filter),
+              );
+
+        container.innerHTML = filtered
+          .map(
+            (project, index) => `
+          <div class="project-card border border-slate-100 rounded-2xl p-7 hover:shadow-2xl hover:border-indigo-100 transition-all duration-500 bg-white transform-gpu opacity-100 translate-y-0" 
+               style="transition-delay: ${index * 100}ms">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-xs font-bold text-indigo-400 uppercase">${project.year}</span>
+              <span class="px-2 py-1 bg-indigo-50 text-indigo-500 text-[10px] font-bold rounded">${project.tag}</span>
+            </div>
+            
+            <div class="grid ${project.images.length > 1 ? "grid-cols-2" : "grid-cols-1"} gap-2 mb-4">
+              ${project.images
+                .slice(0, 2)
+                .map(
+                  (img) => `
+                <img src="${img.url}" alt="${img.label}" class="w-full h-32 object-cover rounded-lg border border-slate-50 shadow-sm" />
+              `,
+                )
+                .join("")}
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-800">${project.title}</h3>
+            <p class="text-slate-600 mt-2 text-sm line-clamp-2">${project.desc}</p>
+            
+            <button onclick="openProjectModal('${project.id}')" 
+                    class="mt-6 w-full py-2.5 bg-slate-50 text-indigo-500 font-semibold rounded-xl hover:bg-indigo-500 hover:text-white transition-all border border-indigo-100 text-sm shadow-sm">
+              Lihat Detail Proyek
+            </button>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              ${project.tech
+                .slice(0, 2)
+                .map(
+                  (t) =>
+                    `<span class="px-3 py-1 bg-slate-100 text-[10px] text-slate-500 rounded-full font-medium">${t}</span>`,
+                )
+                .join("")}
+            </div>
+          </div>
+        `,
+          )
+          .join("");
+
+        // Setup tilt effect for newly rendered cards
+        container.querySelectorAll(".project-card").forEach((card) => {
+          setupTilt(card);
+        });
+      }
+
+      function setupTilt(card) {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+      }
+
+      function renderSkills() {
+        const container = document.getElementById("skills-container");
+        if (!container) return;
+
+        const categories = {
+          tools: "Tools & Software",
+          hardSkills: "Hard Skills",
+          softSkills: "Soft Skills",
+        };
+
+        container.innerHTML = Object.keys(skillsData)
+          .map(
+            (key, catIndex) => `
+          <div class="skill-category-card opacity-0 translate-y-10 transition-all duration-700" style="transition-delay: ${catIndex * 200}ms">
+            <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+              <span class="w-1.5 h-6 bg-indigo-500 rounded-full"></span>
+              ${categories[key]}
+            </h3>
+            <div class="space-y-3">
+              ${skillsData[key]
+                .map(
+                  (skill) => `
+                <div class="flex items-center gap-3 p-3 bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-all group">
+                  <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-indigo-50 text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white transition-colors duration-300 text-sm">
+                    <i class="fa-solid ${skill.icon}"></i>
+                  </div>
+                  <span class="font-medium text-slate-700 text-sm">${skill.label}</span>
+                </div>
+              `,
+                )
+                .join("")}
+            </div>
+          </div>
+        `,
+          )
+          .join("");
+      }
+
+      function renderExperience() {
+        const container = document.getElementById("experience-container");
+        if (!container) return;
+        container.innerHTML = experienceData
+          .map(
+            (exp, index) => `
+          <div class="experience-card-item shrink-0 w-[300px] md:w-[450px] snap-start p-8 bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden opacity-0 translate-y-10" style="transition-delay: ${index * 150}ms">
+            <!-- Dekorasi Latar Belakang -->
+            <div class="absolute -right-4 -top-4 w-24 h-24 bg-indigo-50 rounded-full opacity-50 group-hover:scale-[2] transition-transform duration-700"></div>
+            
+            <div class="relative z-10">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-indigo-500 text-white shadow-lg shadow-indigo-200 group-hover:rotate-12 transition-transform duration-300">
+                  <i class="fa-solid ${exp.icon} text-xl"></i>
+                </div>
+                <div>
+                  <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded-full uppercase tracking-widest mb-1 border border-indigo-100">
+                    ${exp.year}
+                  </span>
+                  <h3 class="text-lg font-bold text-slate-800 leading-tight group-hover:text-indigo-600 transition-colors">
+                    ${exp.title}
+                  </h3>
+                </div>
+              </div>
+              <p class="text-slate-500 text-sm leading-relaxed border-l-2 border-indigo-100 pl-4 py-1 group-hover:border-indigo-400 transition-colors">
+                ${exp.description}
+              </p>
+            </div>
+          </div>
+        `,
+          )
+          .join("");
+      }
+
+      function openProjectModal(key) {
+        const project = projectDetails[key];
+        const container = document.getElementById("modal-content");
+        if (!project) return;
+
+        const techHtml = project.tech
+          .map(
+            (t) =>
+              `<span class="px-2 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-bold rounded-md border border-indigo-100">${t}</span>`,
+          )
+          .join("");
+
+        const imagesHtml = project.images
+          .map((img) => {
+            // Logika untuk mendeteksi diagram teknis agar tidak terpotong
+            const isDiagram =
+              /erd|flowchart|diagram|proses|registrasi|login|form|beranda|antarmuka|daftar/i.test(
+                img.label,
+              );
+            const imgClass = isDiagram
+              ? "max-h-[60vh] md:max-h-[75vh] object-contain p-1"
+              : "h-48 md:h-64 object-cover";
+
+            return `
+            <div class="group">
+              <div class="overflow-hidden rounded-xl shadow-sm border border-slate-100 mb-3 transition-all duration-300 group-hover:shadow-md bg-white">
+                <img src="${img.url}" alt="${img.label}" class="w-full transition-transform duration-500 group-hover:scale-105 ${imgClass}" />
+              </div>
+              <div class="px-1">
+                <p class="text-xs font-bold text-indigo-500 uppercase mb-1">${img.label}</p>
+                <p class="text-sm text-slate-500 leading-relaxed">${img.caption}</p>
+              </div>
+            </div>`;
+          })
+          .join("");
+
+        container.innerHTML = `
+          <div class="flex flex-col gap-8">
+            <div class="border-b border-slate-100 pb-6">
+              <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 mb-3">${project.title}</h2>
+              <div class="flex flex-wrap gap-2 mb-6">${techHtml}</div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-indigo-50/50 rounded-xl p-4 border border-indigo-100">
+                  <p class="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-1">Peran Saya</p>
+                  <p class="text-slate-700 font-medium">${project.role}</p>
+                </div>
+                <div class="flex items-center"><p class="text-slate-600 leading-relaxed text-sm md:text-base">${project.desc}</p></div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-images text-indigo-400"></i> Galeri Proyek
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">${imagesHtml}</div>
+            </div>
+          </div>`;
+
+        document.getElementById("project-modal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeProjectModal() {
+        document.getElementById("project-modal").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Typing Logic for Roles
+      const roles = ["System Analyst", "Business Analyst", "UI/UX Designer"];
+      let roleIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      let typeSpeed = 100;
+
+      function typeRoles() {
+        const typingEl = document.getElementById("typing-text");
+        if (!typingEl) return;
+
+        const currentRole = roles[roleIdx];
+
+        if (isDeleting) {
+          typingEl.textContent = currentRole.substring(0, charIdx - 1);
+          charIdx--;
+          typeSpeed = 50;
+        } else {
+          typingEl.textContent = currentRole.substring(0, charIdx + 1);
+          charIdx++;
+          typeSpeed = 100;
+        }
+
+        if (!isDeleting && charIdx === currentRole.length) {
+          isDeleting = true;
+          typeSpeed = 2000; // Jeda saat teks lengkap
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          roleIdx = (roleIdx + 1) % roles.length;
+          typeSpeed = 500;
+        }
+
+        setTimeout(typeRoles, typeSpeed);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderProjects();
+        renderSkills();
+        renderExperience();
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                entry.target.classList.remove("opacity-0", "translate-y-10");
+              }
+            });
+          },
+          { threshold: 0.05 }, // Ambang batas lebih rendah agar lebih sensitif di HP
+        );
+
+        document
+          .querySelectorAll(
+            "section, header, .skill-category-card, .experience-card-item",
+          )
+          .forEach((el) => {
+            if (
+              !el.classList.contains("skill-category-card") &&
+              !el.classList.contains("experience-card-item")
+            ) {
+              el.classList.add(
+                "transition-all",
+                "duration-1000",
+                "opacity-0",
+                "translate-y-10",
+              );
+            }
+            observer.observe(el);
+          });
+
+        // Start Typing Roles
+        typeRoles();
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) target.scrollIntoView({ behavior: "smooth" });
+          });
+        });
+
+        // Button Interaction
+        const btnKarya = document.getElementById("btn-karya");
+        if (btnKarya) {
+          btnKarya.addEventListener("click", () => {
+            const proyek = document.getElementById("proyek");
+            setTimeout(() => {
+              proyek.classList.add("bg-indigo-50");
+              setTimeout(() => proyek.classList.remove("bg-indigo-50"), 1000);
+            }, 500);
+          });
+        }
+
+        // Fungsi Salin Email
+        window.copyToClipboard = function (text, btn) {
+          navigator.clipboard.writeText(text).then(() => {
+            const originalContent = btn.innerHTML;
+            btn.innerHTML =
+              '<span class="text-green-500 italic text-xs">Email tersalin!</span>';
+            btn.classList.add("scale-105");
+
+            setTimeout(() => {
+              btn.innerHTML = originalContent;
+              btn.classList.remove("scale-105");
+            }, 2000);
+          });
+        };
+
+        // Fungsi Scroll Pengalaman
+        window.scrollExperience = function (direction) {
+          const container = document.getElementById("experience-container");
+          const scrollAmount = window.innerWidth < 768 ? 324 : 474; // Sesuaikan jarak geser untuk mobile (300px + gap)
+          if (direction === "left") {
+            container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+          } else {
+            container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
